@@ -4,26 +4,24 @@ import {Consumer, UserContext,  UnAuthMessage } from '../Context/context';
 function Transactions() {
     const ctx = React.useContext(UserContext);
     
-    const users = ctx.users;
-    const acc = ctx.account[0].email;
+    // const users = ctx.users;
+    // const acc = ctx.account[0].email;
     
-    const index = () => {
-        for (let i = 0; i < users.length; i++) {
-        const element = users[i];
-        if (element.email === acc ){
-        const index = i
-        return index;            
-        };
-        return false
-        };
-    }
-
-    let i = index()
+    // const index = () => {
+    //     for (let i = 0; i < users.length; i++) {
+    //     const element = users[i];
+    //     if (element.email === acc ){
+    //     const index = i
+    //     return index;            
+    //     };
+    //     return false
+    //     };
+    // }
 
     return (
         <Consumer>
             { value => (
-            value.LoginStatus == true ? (
+            value.LoginStatus === true ? (
             <div className="container">
             <h5>Transactions</h5><br/>
             <table className="table table-striped">

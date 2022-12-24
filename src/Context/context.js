@@ -62,7 +62,7 @@ function Form(props) {
     //Disbable Login and Create Account Button
     function success(label, field) {
 
-        if((FormName && name === "") || (FormEmail && email === "") || (FormPassword && password === "") || FormAmount && amount === "") { 
+        if((FormName && name === "") || (FormEmail && email === "") || (FormPassword && password === "") || (FormAmount && amount === "")) { 
             return false;
            } else {
             setDisabled(false) 
@@ -107,11 +107,11 @@ function Form(props) {
     //Validate that user exists when logging in
     function validateUser(user, password, label) {
         for (let i = 0; i < ctx.users.length; i++) {
-            if ( ctx.users[i].email == user){
+            if ( ctx.users[i].email === user){
                 // user was found
 
                 // verify user password
-                if (ctx.users[i].password == password) {
+                if (ctx.users[i].password === password) {
                     ctx.account = [{name: ctx.users[i].name, email: ctx.users[i].email, balance: ctx.users[i].balance }];
                     setStatus(`Success: Welcome ${name}! You can deposit or withdraw money from your account.`);
                     return true;
@@ -133,7 +133,7 @@ function Form(props) {
 
 
         for (let i = 0; i < ctx.users.length; i++) {
-            if ( ctx.users[i].email == user){
+            if ( ctx.users[i].email === user){
                 // update user balance 
                 ctx.users[i].balance += parseInt(amount);
 
@@ -158,7 +158,7 @@ function Form(props) {
             ctx.account[0].balance -= amount;
 
             for (let i = 0; i < ctx.users.length; i++) {
-                if ( ctx.users[i].email == user){
+                if ( ctx.users[i].email === user){
                     // update user balance 
                     ctx.users[i].balance -= amount;
 

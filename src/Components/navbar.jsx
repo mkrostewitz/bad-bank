@@ -1,14 +1,11 @@
-import React, {useState, useRef} from 'react';
-import {Container, Nav, Navbar, OverlayTrigger, Overlay, Tooltip, Popover} from 'react-bootstrap'
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import React from 'react';
+import {Container, Nav, Navbar, OverlayTrigger,Tooltip} from 'react-bootstrap'
 import { UserContext } from '../Context/context';
 
 import Logo from '../Pictures/bank.png';
 
 function NavBar(props) {
     const ctx = React.useContext(UserContext);
-    const [show, setShow] = useState(false);
-    const target = useRef(null);
  
     const homeTooltip = (props) => (
         
@@ -64,7 +61,7 @@ function NavBar(props) {
     return(
         <Navbar expand="lg" bg="primary" variant="light">
             <Container>
-                <Navbar.Brand href="/"><img src={Logo} width="50"></img></Navbar.Brand>
+                <Navbar.Brand href="/"><img src={Logo} alt="Logo" width="50"></img></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

@@ -7,7 +7,7 @@ function Deposit() {
     return (
         <Consumer>
             { value => (
-            value.LoginStatus == true ? (
+            value.LoginStatus === true ? (
             <FormBody
             bgcolor="success"
             header="Deposit"
